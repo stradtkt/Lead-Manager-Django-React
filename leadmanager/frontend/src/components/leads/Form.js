@@ -29,25 +29,25 @@ export class Form extends Component {
     render() {
         const {name, email, message} = this.state;
         return (
-            <div class="row">
-            <div class="col s12 m12">
-              <div class="card darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Add Lead</span>
+            <div className="row">
+            <div className="col s12 m12">
+              <div className="card darken-1">
+                <div className="card-content white-text">
+                  <span className="card-title">Add Lead</span>
                   <form onSubmit={this.onSubmit}>
-                    <div class="input-field col s12">
+                    <div className="input-field col s12">
                         <input name="name" onChange={this.onChange} value={name} type="text" className="" />
-                        <label for="name">Name</label>
+                        <label htmlFor="name">Name</label>
                     </div>
-                    <div class="input-field col s12">
+                    <div className="input-field col s12">
                         <input name="email" onChange={this.onChange} value={email} type="email" className="" />
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                     </div>
-                    <div class="input-field col s12">
+                    <div className="input-field col s12">
                         <input name="message" onChange={this.onChange} value={message} type="text" className="" />
-                        <label for="message">Message</label>
+                        <label htmlFor="message">Message</label>
                     </div>
-                    <button class="btn waves-effect waves-light indigo darken-2" type="submit">Submit
+                    <button className="btn waves-effect waves-light indigo darken-2" type="submit">Submit
                     </button>
                   </form>
                 </div>

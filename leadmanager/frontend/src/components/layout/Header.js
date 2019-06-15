@@ -15,10 +15,13 @@ export class Header extends Component {
         const authLinks = (
             <ul className="right">
                 <li>
+                    <span><strong>{user ? `Welcome : ${user.username}` : ''}</strong></span>
+                </li>
+                <li>
                     <Link to='/'>Dashboard</Link>
                 </li>
                 <li>
-                    <button onClick={this.props.logoutUser}>Logout</button>
+                    <a className="btn waves-effect waves-light orange darken-4" onClick={this.props.logoutUser}>Logout</a>
                 </li>
             </ul>
         );

@@ -47,7 +47,7 @@ export class Form extends Component {
                         <input name="message" onChange={this.onChange} value={message} type="text" className="" />
                         <label for="message">Message</label>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit">Submit
+                    <button class="btn waves-effect waves-light indigo darken-2" type="submit">Submit
                     </button>
                   </form>
                 </div>

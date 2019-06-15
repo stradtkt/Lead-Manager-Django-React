@@ -35,7 +35,7 @@ export const loginUser = (username, password) => dispatch => {
         }
     }
     const body = JSON.stringify({username, password});
-    axios.post('/api/auth/login', config, body)
+    axios.post('/api/auth/login', body, config)
         .then(res => {
             dispatch({
                 type: LOGIN_SUCCESS,
@@ -47,5 +47,27 @@ export const loginUser = (username, password) => dispatch => {
             dispatch({
                 type: LOGIN_FAIL
             });
+        });
+}
+
+export const logoutUser = () => (dispatch, getState) => {
+    const token = getState().auth.token;
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    if(token) {
+        config.headers['Authorization'] = `Token ${token}`;
+    }
+    axios.post('/api/auth/logout/', null, config)
+        .then(res => {
+            dispatch({
+                type: LOGOUT,
+                payload: res.data
+            });
+        })
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status));
         });
 }
